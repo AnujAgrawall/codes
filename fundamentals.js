@@ -235,7 +235,59 @@ console.log(` the bill was ${bill}, the tip was ${tip}, and the total value is $
 end ----------------*******************------------------part 1--------------*********
 
 
-*/
-
 //  fundamental part 2 beginss --------------******************---------------------
+"use strict"
 
+//  function Declaration synatax ----------------*************-------------
+
+
+function describeCountry(country, population, capitalCity) {
+    return `${country} has ${population} million people and its capital city is ${capitalCity}.`;
+}
+const tempelate = describeCountry("India", 1028, "Delhi");
+const tempelate1 = describeCountry("Finland", 6, "Helsinki");
+const tempelate2 = describeCountry("Canada", 100, "Toronto");
+console.log(tempelate, tempelate1, tempelate2);
+
+function percentageOfWorld1(country1, population1) {
+    return `${country1} has ${population1} million people, so it's about ${population1 / 79}% of the world population.`;
+}
+const indiaPopulation = percentageOfWorld1("India", 1040);
+const canadaPopulation = percentageOfWorld1("Canada", 120);
+const francePopulation = percentageOfWorld1("France", 100);
+console.log(indiaPopulation, canadaPopulation, francePopulation);
+
+// function expression syntax -----*************--------------
+
+const percentageOfWorld2 = function (country2, population2) {
+    return `${country2} has ${population2} millions people, so it's about ${(population2 / 7900) * 100}% of the world population`
+}
+const indiaPopulation1 = percentageOfWorld2("India", 1040);
+const canadaPopulation1 = percentageOfWorld2("Canada", 120);
+const francePopulation1 = percentageOfWorld2("France", 100);
+console.log(indiaPopulation1, canadaPopulation1, francePopulation1);
+
+//  arrow function exaple syntax-----------***************---------------------
+
+const percentageOfWorld3 = (country3, population3) => {
+    return `${country3} has ${population3} millions people, so it's about ${(population3 / 7900) * 100}% of the world population`
+}
+const indiaPopulation2 = percentageOfWorld3("India", 1040);
+const canadaPopulation2 = percentageOfWorld3("Canada", 120);
+const francePopulation2 = percentageOfWorld3("France", 100);
+console.log(indiaPopulation2, canadaPopulation2, francePopulation2);
+
+//  calling a function----*************---------
+
+function describePopulation(country5, population5) {
+    const temp = percentageOfWorld1(country5, population5);
+    return temp;
+}
+const indPopulation = describePopulation("India", 1040);
+const pakPopulation = describePopulation("Pakistan", 104);
+const chiPopulation = describePopulation("China", 1441);
+console.log(indPopulation, pakPopulation, chiPopulation);
+
+
+
+*/
