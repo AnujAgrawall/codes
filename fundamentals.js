@@ -1,3 +1,4 @@
+"use strict"
 /*
 //  javaScript funadamental part one where we covered all of the fundamentals
 
@@ -287,6 +288,201 @@ const indPopulation = describePopulation("India", 1040);
 const pakPopulation = describePopulation("Pakistan", 104);
 const chiPopulation = describePopulation("China", 1441);
 console.log(indPopulation, pakPopulation, chiPopulation);
+
+
+//  coding challenge #1 part 2 -------------------***************------------------
+// arrow function to calculate the avgScore
+
+const calcAverage = (roundOne, roundTwo, roundThree) => (roundOne + roundTwo + roundThree) / 3;
+// test data 1
+const dolphinsRound1 = calcAverage(44, 23, 71);
+const koalaRound1 = calcAverage(65, 54, 49);
+
+// test data 2
+const dolphinsRound2 = calcAverage(85, 54, 41);
+const koalaRound2 = calcAverage(23, 34, 27);
+
+//  all data avgScore output
+
+console.log(dolphinsRound1, koalaRound1, dolphinsRound2, koalaRound2);
+
+// arrow function to checkTheWinner
+
+const checkWinner = (avgDolphins, avgKoalas) => {
+    if (avgDolphins >= 2 * avgKoalas) {
+        return `Dolphin's win ${"(" + avgDolphins + "vs" + avgKoalas + ")"}`;
+    } else if (avgKoalas >= 2 * avgDolphins) {
+        return ` Koala's win ${"(" + avgKoalas + "vs" + avgDolphins + ")"}`;
+    } else {
+        return ` no one wins`;
+    }
+}
+
+// final Winner output test data 1
+console.log(checkWinner(dolphinsRound1, koalaRound1));
+// final winner output test data 2
+console.log(checkWinner(dolphinsRound2, koalaRound2));
+
+//  introduction to arrays exercise questions
+
+const population = [1040, 30, 40, 100];
+console.log(population.length === 4);
+
+function percentageOfWorld1(population) {
+    return ((population / 79) + "%");
+}
+const percentages = [percentageOfWorld1(population[0]),
+percentageOfWorld1(population[1]),
+percentageOfWorld1(population[2]),
+percentageOfWorld1(population[3]),
+];
+console.log(percentages);
+
+
+//   basic array operations (methods)----***********-------
+
+const neighbours = ["pakistan", "china", "srilanka", "nepal"];
+
+neighbours.push("utopia");
+console.log(neighbours);
+
+neighbours.pop();
+console.log(neighbours);
+// upshift for pushing in front and shift for poping from front
+
+if (neighbours.includes("germany")) {
+    console.log("Probably  a central European country :D");
+} else {
+    console.log("Probably not a central European country :D");
+}
+
+console.log(neighbours.indexOf("china"));
+
+neighbours[1] = "Republic of china"
+
+console.log(neighbours);
+
+//  coding challenge #2 Arrays 
+
+function calcTip(bill) {
+    if (bill >= 50 && bill <= 300) {
+        tips.push(bill * 0.15);
+        total.push(bill + bill * 0.15);
+        // console.log(tips, total);
+    } else {
+        tips.push(bill * 0.2);
+        total.push(bill + bill * 0.2);
+        // console.log(tips, total);
+        
+    }
+}
+const bills = [125, 555, 44];
+const tips = [];
+const total = [];
+const allBills = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// calcTip(bills[1]);
+// calcTip(bills[2]);
+console.log(tips, total, bills);
+// console.log(total);
+
+
+//  introduction to object -----assisment-------- 
+
+const myCountry = {
+    country: "India",
+    capital: "Delhi",
+    language: "hindi",
+    population: 1040,
+    neighbours: ["pakistan", "china", "nepal", "srilanka"]
+}
+console.log(myCountry.neighbours[3]);
+
+// using dot vs bracket notaion -------------************-------------------
+console.log(`${myCountry.country} has ${myCountry.population} millions ${myCountry.language}-speaking peoples,${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}!`);
+
+console.log(myCountry.population + 2);  dot notation
+console.log(myCountry["population"] - 2); bracket notation 
+
+//  live video challenge solution 
+
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends,and his best friend is called ${jonas.friends[0]}`);
+
+const myCountry = {
+    country: "India",
+    capital: "Delhi",
+    language: "hindi",
+    population: 1040,
+    neighbours: ["pakistan", "china", "nepal", "srilanka"],
+    describe: function () {
+        console.log(`${this.country} has ${this.population} millions ${this.language}-speaking peoples,${this.neighbours.length} neighbouring countries and a capital called ${this.capital}!`);
+
+    },
+    checkIsland: function () {
+        this.Island = this.neighbours.length > 0 ? (false) : (true);
+        console.log(this.Island);
+    }
+}
+console.log(myCountry.neighbours[3]);
+
+// using dot vs bracket notaion -------------************-------------------
+
+
+myCountry.describe();
+myCountry.checkIsland();
+console.log(myCountry);
+
+
+//  coding challenge #3 
+
+
+// part one method to mark bmi
+
+
+const markBMI = {
+    fullName: "Mark Miller",
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmi = markBMI.mass / markBMI.height ** 2;
+        return this.bmi;
+    }
+}
+
+
+// part to calculate john's
+
+
+const johnBMI = {
+    fullName: "John Smith",
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = (`${johnBMI.mass / johnBMI.height ** 2}`);
+        return this.bmi;
+    }
+}
+
+
+//  without calling the function console.log(Math.round(markBMI.bmi)); this won't work
+
+markBMI.calcBMI();
+johnBMI.calcBMI()
+
+
+//  logging the values to console
+
+
+console.log(Math.round(markBMI.bmi));
+console.log(Math.round(johnBMI.bmi));
+
+// ternerary opertaor to log the statement an dthis is the part 3
+
+const heigherBMI = markBMI.bmi > johnBMI.bmi ? `${markBMI.fullName}'s BMI (${markBMI.bmi}) is higher tha ${johnBMI.fullName}'s (${johnBMI.bmi})!` : `${johnBMI.fullName}'s BMI (${johnBMI.bmi}) is higher tha ${markBMI.fullName}'s (${markBMI.bmi})!`;
+
+//  logging the output from opertaor
+
+console.log(heigherBMI);
+
 
 
 
