@@ -362,7 +362,7 @@ neighbours[1] = "Republic of china"
 
 console.log(neighbours);
 
-//  coding challenge #2 Arrays 
+//  coding challenge #2 Arrays -----========----------
 
 function calcTip(bill) {
     if (bill >= 50 && bill <= 300) {
@@ -373,7 +373,7 @@ function calcTip(bill) {
         tips.push(bill * 0.2);
         total.push(bill + bill * 0.2);
         // console.log(tips, total);
-        
+
     }
 }
 const bills = [125, 555, 44];
@@ -386,7 +386,7 @@ console.log(tips, total, bills);
 // console.log(total);
 
 
-//  introduction to object -----assisment-------- 
+//  introduction to object -----assisment--------
 
 const myCountry = {
     country: "India",
@@ -401,9 +401,9 @@ console.log(myCountry.neighbours[3]);
 console.log(`${myCountry.country} has ${myCountry.population} millions ${myCountry.language}-speaking peoples,${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}!`);
 
 console.log(myCountry.population + 2);  dot notation
-console.log(myCountry["population"] - 2); bracket notation 
+console.log(myCountry["population"] - 2); bracket notation
 
-//  live video challenge solution 
+//  live video challenge solution
 
 console.log(`${jonas.firstName} has ${jonas.friends.length} friends,and his best friend is called ${jonas.friends[0]}`);
 
@@ -432,7 +432,7 @@ myCountry.checkIsland();
 console.log(myCountry);
 
 
-//  coding challenge #3 
+//  coding challenge #3
 
 
 // part one method to mark bmi
@@ -483,7 +483,83 @@ const heigherBMI = markBMI.bmi > johnBMI.bmi ? `${markBMI.fullName}'s BMI (${mar
 
 console.log(heigherBMI);
 
+//  lecture iteration for loop exercise question
 
+for (let index = 1; index <= 50; index++) {
+    console.log(`voter number ${index} is currently voting`);
+
+}
+
+//  lecture arrays, breaking and continuing exercise question
+
+const populations = [10, 1441, 332, 83];
+const percentages2 = [];
+function percentageOfWorld1(population) {
+    for (let i = 0; i < populations.length; i++)
+    percentages2.push(populations[i] / 79);
+}
+percentageOfWorld1();
+console.log(percentages2);
+
+// looping backwards and loops in loops ----exercise question----
+
+const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden',
+'Russia']];
+for (let index = 0; index < listOfNeighbours.length; index++) {
+    for (let i = 0; i < listOfNeighbours[index].length; i++) {
+        console.log(`Neighbour:${listOfNeighbours[index][i]}`);
+    }
+}
+
+
+
+//  lecture the while loop ----exercise question----
+
+const populations = [10, 1441, 332, 83];
+const percentages3 = [];
+function percentageOfWorld1() {
+    let i = 0;
+    while (i < populations.length) {
+        percentages3.push(populations[i] / 79);
+        i++;
+    }
+}
+percentageOfWorld1();
+console.log(percentages3);
 
 
 */
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+function calcTip(bills) {
+    if (bills >= 50 && bills <= 300) {
+        tips.push(bills * 0.15);
+        totals.push(bills + bills * 0.15);
+    } else {
+        tips.push(bills * 0.2);
+        totals.push(bills + bills * 0.2);
+    }
+
+}
+
+for (let index = 0; index < bills.length; index++) {
+    calcTip(bills[index]);
+
+}
+
+console.log("tips:" + tips, "totals:" + totals);
+
+
+
+const calcAverage = (arr) => {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+
+    }
+    return (sum / arr.length);
+}
+console.log(calcAverage(tips));
+console.log(calcAverage(totals));
